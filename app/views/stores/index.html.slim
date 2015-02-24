@@ -1,0 +1,19 @@
+
+=render 'form'
+table
+  thead
+   tr
+      th Name
+      th Description
+      th Count
+
+
+  tbody
+    - @stores.each do |store| 
+      tr
+        td = store.name 
+        td = store.description 
+        td = store.roles.count
+        td
+            a href = store_path(store) data-method='delete'  Destroy
+

@@ -1,0 +1,8 @@
+
+
+= simple_form_for @store do |f|
+     = f.input :name
+     = f.input :description
+     = f.association :roles, collection: Role::ROLES.map(&:titleize), as: :check_boxes
+     = f.submit
+

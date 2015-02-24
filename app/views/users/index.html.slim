@@ -1,0 +1,23 @@
+
+
+=render 'form'
+
+table.table
+  thead
+    tr
+      th First name
+      th Last name
+      th Mobile
+
+
+
+  tbody
+    - @users.each do |user|
+       tr
+        td= user.first_name
+        td= user.last_name
+        td= user.mobile
+        td
+        	a href =  edit_user_path(user)  Edit
+            a href =  user_path(user) data-method='delete'  Destroy
+
